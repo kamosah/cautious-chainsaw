@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-// @ts-expect-error TS(6142) FIXME: Module './Header' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import Header from './Header'
 import {mount} from 'cypress-react-unit-test'
 // we are making mini application - thus we need a store!
@@ -16,9 +15,7 @@ describe('components', () => {
         addTodo: cy.stub().as('addTodo')
       }
       mount(
-        // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <Provider store={store}>
-          {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <Header {...props} />
         </Provider>
       )

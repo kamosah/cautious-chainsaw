@@ -1,8 +1,6 @@
 /// <reference types="cypress" />
 import React from 'react'
-// @ts-expect-error TS(6142) FIXME: Module './TodoItem' was resolved to '/Users/kwamea... Remove this comment to see the full error message
 import TodoItem from './TodoItem'
-// @ts-expect-error TS(6142) FIXME: Module '../store' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import { StoreProvider } from '../store'
 import {mount} from 'cypress-react-unit-test'
 
@@ -22,11 +20,8 @@ const setup = ( editing = false ) => {
   // each todo item is inside ".todo-list" element
   // simple: place TodoItem in a <ul class="todo-list>
   mount(
-    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <StoreProvider>
-      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <ul className="todo-list">
-        {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <TodoItem {...props} />
       </ul>
     </StoreProvider>,

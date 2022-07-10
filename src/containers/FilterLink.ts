@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
-// @ts-expect-error TS(6142) FIXME: Module '../components/Link' was resolved to '/User... Remove this comment to see the full error message
 import Link from '../components/Link'
 
 // @ts-expect-error TS(7006) FIXME: Parameter 'state' implicitly has an 'any' type.

@@ -18,19 +18,13 @@ const Footer = (props: Props) => {
   const { activeCount, completedCount, onClearCompleted } = props
   const itemWord = activeCount === 1 ? 'item' : 'items'
   return (
-    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <footer className="footer">
-      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <span className="todo-count">
-        {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <strong>{activeCount || 'No'}</strong> {itemWord} left
       </span>
-      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <ul className="filters">
         {Object.keys(FILTER_TITLES).map(filter =>
-          // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
           <li key={filter}>
-            {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
             <FilterLink filter={filter}>
               {/* @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message */}
               {FILTER_TITLES[filter]}
@@ -40,7 +34,6 @@ const Footer = (props: Props) => {
       </ul>
       {
         !!completedCount &&
-        // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <button
           className="clear-completed"
           onClick={onClearCompleted}

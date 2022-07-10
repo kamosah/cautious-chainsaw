@@ -1,7 +1,6 @@
 import React from 'react'
 // @ts-expect-error TS(2307) FIXME: Cannot find module 'react-test-renderer/shallow' o... Remove this comment to see the full error message
 import { createRenderer } from 'react-test-renderer/shallow'
-// @ts-expect-error TS(6142) FIXME: Module './App' was resolved to '/Users/kwameamosah... Remove this comment to see the full error message
 import App from './App'
 import Header from '../containers/Header'
 import MainSection from '../containers/MainSection'
@@ -9,7 +8,6 @@ import MainSection from '../containers/MainSection'
 
 const setup = (propOverrides: any) => {
   const renderer = createRenderer()
-  // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   renderer.render(<App />)
   const output = renderer.getRenderOutput()
   return output

@@ -13,9 +13,12 @@ type Props = {
 type State = any;
 
 export default class TodoTextInput extends Component<Props, State> {
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   props: any;
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   setState: any;
 
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   state = {
     text: this.props.text || ''
   }
@@ -40,9 +43,9 @@ export default class TodoTextInput extends Component<Props, State> {
     }
   }
 
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   render() {
     return (
-      // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <input className={
         classnames({
           edit: this.props.editing,

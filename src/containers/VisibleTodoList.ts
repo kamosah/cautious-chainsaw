@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as TodoActions from '../actions'
-// @ts-expect-error TS(6142) FIXME: Module '../components/TodoList' was resolved to '/... Remove this comment to see the full error message
 import TodoList from '../components/TodoList'
 import { getVisibleTodos } from '../selectors'
 

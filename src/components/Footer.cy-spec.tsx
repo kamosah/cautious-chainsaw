@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 // compare to tests in "Footer.spec.js"
 import React from 'react'
-// @ts-expect-error TS(6142) FIXME: Module './Footer' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import Footer from './Footer'
 import { mount } from 'cypress-react-unit-test'
 
@@ -19,9 +18,7 @@ const setup = (propOverrides: any) => {
   }, propOverrides)
 
   mount(
-    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <Provider store={store}>
-      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <Footer {...props} />
     </Provider>
   )

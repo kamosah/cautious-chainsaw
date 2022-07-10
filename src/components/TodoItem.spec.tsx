@@ -1,9 +1,7 @@
 import React from 'react'
 // @ts-expect-error TS(2307) FIXME: Cannot find module 'react-test-renderer/shallow' o... Remove this comment to see the full error message
 import { createRenderer } from 'react-test-renderer/shallow';
-// @ts-expect-error TS(6142) FIXME: Module './TodoItem' was resolved to '/Users/kwamea... Remove this comment to see the full error message
 import TodoItem from './TodoItem'
-// @ts-expect-error TS(6142) FIXME: Module './TodoTextInput' was resolved to '/Users/k... Remove this comment to see the full error message
 import TodoTextInput from './TodoTextInput'
 
 const setup = ( editing = false ) => {
@@ -24,7 +22,6 @@ const setup = ( editing = false ) => {
   const renderer = createRenderer()
 
   renderer.render(
-    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <TodoItem {...props} />
   )
 

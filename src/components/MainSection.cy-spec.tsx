@@ -1,6 +1,5 @@
 /// <reference types="cypress" />
 import React from 'react'
-// @ts-expect-error TS(6142) FIXME: Module './MainSection' was resolved to '/Users/kwa... Remove this comment to see the full error message
 import MainSection from './MainSection'
 import { mount } from 'cypress-react-unit-test'
 
@@ -24,9 +23,7 @@ const setup = (propOverrides: any) => {
   }, propOverrides)
 
   mount(
-    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <Provider store={store}>
-      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <MainSection {...props} />
     </Provider>,
     { cssFile: 'node_modules/todomvc-app-css/index.css' }

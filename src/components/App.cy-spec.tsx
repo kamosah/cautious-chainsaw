@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 // compare to App.spec.js
 import React from 'react'
-// @ts-expect-error TS(6142) FIXME: Module './App' was resolved to '/Users/kwameamosah... Remove this comment to see the full error message
 import App from './App'
+// @ts-expect-error TS(6059) FIXME: File '/Users/kwameamosah/projects/ts-migrate-examp... Remove this comment to see the full error message
 import {mount} from 'cypress-react-unit-test'
 // we are making mini application - thus we need a store!
 import { Provider } from 'react-redux'
@@ -17,11 +17,8 @@ describe('components', () => {
     // our CSS styles assume the app is inside
     // a DIV element with class "todoapp"
     mount(
-      // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <Provider store={store}>
-        {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <div className="todoapp">
-          {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <App></App>
         </div>
       </Provider>,

@@ -1,9 +1,7 @@
 import React from 'react'
 // @ts-expect-error TS(2307) FIXME: Cannot find module 'react-test-renderer/shallow' o... Remove this comment to see the full error message
 import { createRenderer } from 'react-test-renderer/shallow';
-// @ts-expect-error TS(6142) FIXME: Module './TodoList' was resolved to '/Users/kwamea... Remove this comment to see the full error message
 import TodoList from './TodoList'
-// @ts-expect-error TS(6142) FIXME: Module './TodoItem' was resolved to '/Users/kwamea... Remove this comment to see the full error message
 import TodoItem from './TodoItem'
 
 const setup = () => {
@@ -34,7 +32,7 @@ const setup = () => {
   }
 
   const renderer = createRenderer();
-  // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+  // @ts-expect-error TS(2322) FIXME: Type '{ filteredTodos: { text: string; completed: ... Remove this comment to see the full error message
   renderer.render(<TodoList {...props} />)
   const output = renderer.getRenderOutput()
 

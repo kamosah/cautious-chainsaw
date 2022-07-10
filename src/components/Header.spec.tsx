@@ -1,9 +1,7 @@
 import React from 'react'
 // @ts-expect-error TS(2307) FIXME: Cannot find module 'react-test-renderer/shallow' o... Remove this comment to see the full error message
 import { createRenderer } from 'react-test-renderer/shallow';
-// @ts-expect-error TS(6142) FIXME: Module './Header' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import Header from './Header'
-// @ts-expect-error TS(6142) FIXME: Module '../components/TodoTextInput' was resolved ... Remove this comment to see the full error message
 import TodoTextInput from '../components/TodoTextInput'
 
 const setup = () => {
@@ -13,7 +11,6 @@ const setup = () => {
   }
 
   const renderer = createRenderer();
-  // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   renderer.render(<Header {...props} />)
   const output = renderer.getRenderOutput()
 
