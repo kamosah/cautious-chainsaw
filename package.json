@@ -9,6 +9,7 @@
   },
   "scripts": {
     "ts-migrate": "ts-migrate",
+    "typecheck": "tsc --noEmit",
     "test": "start-test 1234 cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",

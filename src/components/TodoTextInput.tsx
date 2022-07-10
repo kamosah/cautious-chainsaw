@@ -1,21 +1,28 @@
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'clas... Remove this comment to see the full error message
 import classnames from 'classnames'
 
-export default class TodoTextInput extends Component {
-  static propTypes = {
-    onSave: PropTypes.func.isRequired,
-    text: PropTypes.string,
-    placeholder: PropTypes.string,
-    editing: PropTypes.bool,
-    newTodo: PropTypes.bool
-  }
+type Props = {
+    onSave: (...args: any[]) => any;
+    text?: string;
+    placeholder?: string;
+    editing?: boolean;
+    newTodo?: boolean;
+};
+
+type State = any;
+
+export default class TodoTextInput extends Component<Props, State> {
+  props: any;
+  setState: any;
 
   state = {
+    // @ts-expect-error TS(2729): Property 'props' is used before its initialization... Remove this comment to see the full error message
     text: this.props.text || ''
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: any) => {
     const text = e.target.value.trim()
     if (e.which === 13) {
       this.props.onSave(text)
@@ -25,11 +32,11 @@ export default class TodoTextInput extends Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = (e: any) => {
     this.setState({ text: e.target.value })
   }
 
-  handleBlur = e => {
+  handleBlur = (e: any) => {
     if (!this.props.newTodo) {
       this.props.onSave(e.target.value)
     }
@@ -37,6 +44,7 @@ export default class TodoTextInput extends Component {
 
   render() {
     return (
+      // @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
       <input className={
         classnames({
           edit: this.props.editing,

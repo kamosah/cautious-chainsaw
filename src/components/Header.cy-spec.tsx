@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import React from 'react'
+// @ts-expect-error TS(6142): Module './Header' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import Header from './Header'
 import {mount} from 'cypress-react-unit-test'
 // we are making mini application - thus we need a store!
+// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from '../reducers'
@@ -15,7 +18,9 @@ describe('components', () => {
         addTodo: cy.stub().as('addTodo')
       }
       mount(
+        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <Provider store={store}>
+          {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <Header {...props} />
         </Provider>
       )
