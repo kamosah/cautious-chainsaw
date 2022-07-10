@@ -8,6 +8,7 @@
     "node": ">=12.14"
   },
   "scripts": {
+    "ts-migrate": "ts-migrate",
     "test": "start-test 1234 cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
