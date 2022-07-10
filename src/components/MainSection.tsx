@@ -1,9 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Footer from './Footer'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
-const MainSection = ({ todosCount, completedCount, actions }) => (
+type Props = {
+    todosCount: number;
+    completedCount: number;
+    actions: any;
+};
+
+const MainSection = ({ todosCount, completedCount, actions }: Props) => (
   <section className='main'>
     {!!todosCount && (
       <span>
@@ -27,11 +32,5 @@ const MainSection = ({ todosCount, completedCount, actions }) => (
     )}
   </section>
 )
-
-MainSection.propTypes = {
-  todosCount: PropTypes.number.isRequired,
-  completedCount: PropTypes.number.isRequired,
-  actions: PropTypes.object.isRequired
-}
 
 export default MainSection

@@ -9,7 +9,7 @@ import { createStore } from 'redux'
 import reducer from '../reducers'
 const store = createStore(reducer)
 
-const setup = propOverrides => {
+const setup = (propOverrides: any) => {
   const props = Object.assign({
     todosCount: 2,
     completedCount: 1,
@@ -33,12 +33,14 @@ const setup = propOverrides => {
 describe('components', () => {
   describe('MainSection', () => {
     it('should render container', () => {
+      // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
       setup()
       cy.get('section').should('have.class', 'main')
     })
 
     describe('toggle all input', () => {
       it('should render', () => {
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
         setup()
         cy.get('input[type=checkbox]')
           .should('have.class', 'toggle-all')
@@ -54,6 +56,7 @@ describe('components', () => {
       })
 
       it('should call completeAllTodos on change', () => {
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
         setup()
         cy.get('input[type=checkbox]').click({ force: true })
         cy.get('@completeAll').should('be.called')
@@ -62,11 +65,13 @@ describe('components', () => {
 
     describe('footer', () => {
       it('should render', () => {
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
         setup()
         cy.get('footer').contains('1 item left')
       })
 
       it('onClearCompleted should call clearCompleted', () => {
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
         setup()
         cy.contains('button', 'Clear completed').click()
         cy.get('@clearCompleted').should('have.been.called')
@@ -75,6 +80,7 @@ describe('components', () => {
 
     describe('visible todo list', () => {
       it('should render', () => {
+        // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
         setup()
         cy.get('li').should('have.length', 3)
       })

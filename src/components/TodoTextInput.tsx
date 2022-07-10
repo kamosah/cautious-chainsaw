@@ -1,21 +1,28 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
-export default class TodoTextInput extends Component {
-  static propTypes = {
-    onSave: PropTypes.func.isRequired,
-    text: PropTypes.string,
-    placeholder: PropTypes.string,
-    editing: PropTypes.bool,
-    newTodo: PropTypes.bool
-  }
+type Props = {
+    onSave: (...args: any[]) => any;
+    text?: string;
+    placeholder?: string;
+    editing?: boolean;
+    newTodo?: boolean;
+};
 
+type State = any;
+
+export default class TodoTextInput extends Component<Props, State> {
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
+  props: any;
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
+  setState: any;
+
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   state = {
     text: this.props.text || ''
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e: any) => {
     const text = e.target.value.trim()
     if (e.which === 13) {
       this.props.onSave(text)
@@ -25,16 +32,17 @@ export default class TodoTextInput extends Component {
     }
   }
 
-  handleChange = e => {
+  handleChange = (e: any) => {
     this.setState({ text: e.target.value })
   }
 
-  handleBlur = e => {
+  handleBlur = (e: any) => {
     if (!this.props.newTodo) {
       this.props.onSave(e.target.value)
     }
   }
 
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   render() {
     return (
       <input className={

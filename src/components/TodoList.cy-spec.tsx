@@ -32,6 +32,7 @@ const setup = () => {
 
   mount(
     <StoreProvider>
+      {/* @ts-expect-error TS(2322) FIXME: Type '{ filteredTodos: { text: string; completed: ... Remove this comment to see the full error message */}
       <TodoList {...props} />
     </StoreProvider>,
     { cssFile: 'node_modules/todomvc-app-css/index.css' }

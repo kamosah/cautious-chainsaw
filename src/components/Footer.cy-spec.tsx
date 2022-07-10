@@ -10,7 +10,7 @@ import { createStore } from 'redux'
 import reducer from '../reducers'
 const store = createStore(reducer)
 
-const setup = propOverrides => {
+const setup = (propOverrides: any) => {
   const props = Object.assign({
     completedCount: 0,
     activeCount: 0,
@@ -27,6 +27,7 @@ const setup = propOverrides => {
 describe('components', () => {
   describe('Footer', () => {
     it('should render container', () => {
+      // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
       setup()
       cy.contains('footer', 'No items left').should('have.class', 'footer')
     })
@@ -37,6 +38,7 @@ describe('components', () => {
     })
 
     it('should render filters', () => {
+      // @ts-expect-error TS(2554) FIXME: Expected 1 arguments, but got 0.
       setup()
       cy.get('footer li').should('have.length', 3)
         .should((li) => {

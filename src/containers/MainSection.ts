@@ -5,13 +5,13 @@ import MainSection from '../components/MainSection'
 import { getCompletedTodoCount } from '../selectors'
 
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: any) => ({
   todosCount: state.todos.length,
   completedCount: getCompletedTodoCount(state)
 })
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: any) => ({
   actions: bindActionCreators(TodoActions, dispatch)
 })
 

@@ -5,6 +5,7 @@ describe('todos reducer', () => {
   it('should handle initial state', () => {
     expect(
       todos(undefined, {})
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Use Redux',
@@ -20,6 +21,7 @@ describe('todos reducer', () => {
         type: types.ADD_TODO,
         text: 'Run the tests'
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Run the tests',
@@ -39,6 +41,7 @@ describe('todos reducer', () => {
         type: types.ADD_TODO,
         text: 'Run the tests'
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Use Redux',
@@ -67,6 +70,7 @@ describe('todos reducer', () => {
         type: types.ADD_TODO,
         text: 'Fix the tests'
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Use Redux',
@@ -103,6 +107,7 @@ describe('todos reducer', () => {
         type: types.DELETE_TODO,
         id: 1
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Use Redux',
@@ -129,6 +134,7 @@ describe('todos reducer', () => {
         text: 'Fix the tests',
         id: 1
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Fix the tests',
@@ -158,6 +164,7 @@ describe('todos reducer', () => {
         type: types.COMPLETE_TODO,
         id: 1
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Run the tests',
@@ -186,6 +193,7 @@ describe('todos reducer', () => {
       ], {
         type: types.COMPLETE_ALL_TODOS
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Run the tests',
@@ -213,6 +221,7 @@ describe('todos reducer', () => {
       ], {
         type: types.COMPLETE_ALL_TODOS
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Run the tests',
@@ -241,6 +250,7 @@ describe('todos reducer', () => {
       ], {
         type: types.CLEAR_COMPLETED
       })
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Use Redux',
@@ -273,6 +283,7 @@ describe('todos reducer', () => {
           text: 'Write tests'
         }
       ])
+    // @ts-expect-error TS(2551) FIXME: Property 'toEqual' does not exist on type 'Asserti... Remove this comment to see the full error message
     ).toEqual([
       {
         text: 'Write tests',

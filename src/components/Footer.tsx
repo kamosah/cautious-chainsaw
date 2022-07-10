@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import FilterLink from '../containers/FilterLink'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
 
@@ -9,7 +8,13 @@ const FILTER_TITLES = {
   [SHOW_COMPLETED]: 'Completed'
 }
 
-const Footer = (props) => {
+type Props = {
+    completedCount: number;
+    activeCount: number;
+    onClearCompleted: (...args: any[]) => any;
+};
+
+const Footer = (props: Props) => {
   const { activeCount, completedCount, onClearCompleted } = props
   const itemWord = activeCount === 1 ? 'item' : 'items'
   return (
@@ -21,6 +26,7 @@ const Footer = (props) => {
         {Object.keys(FILTER_TITLES).map(filter =>
           <li key={filter}>
             <FilterLink filter={filter}>
+              {/* @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message */}
               {FILTER_TITLES[filter]}
             </FilterLink>
           </li>
@@ -36,12 +42,6 @@ const Footer = (props) => {
       }
     </footer>
   )
-}
-
-Footer.propTypes = {
-  completedCount: PropTypes.number.isRequired,
-  activeCount: PropTypes.number.isRequired,
-  onClearCompleted: PropTypes.func.isRequired,
 }
 
 export default Footer

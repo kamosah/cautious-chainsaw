@@ -1,16 +1,23 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import TodoTextInput from './TodoTextInput'
 
-export default class TodoItem extends Component {
-  static propTypes = {
-    todo: PropTypes.object.isRequired,
-    editTodo: PropTypes.func.isRequired,
-    deleteTodo: PropTypes.func.isRequired,
-    completeTodo: PropTypes.func.isRequired
-  }
+type Props = {
+    todo: any;
+    editTodo: (...args: any[]) => any;
+    deleteTodo: (...args: any[]) => any;
+    completeTodo: (...args: any[]) => any;
+};
 
+type State = any;
+
+export default class TodoItem extends Component<Props, State> {
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
+  props: any;
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
+  setState: any;
+
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   state = {
     editing: false
   }
@@ -19,7 +26,7 @@ export default class TodoItem extends Component {
     this.setState({ editing: true })
   }
 
-  handleSave = (id, text) => {
+  handleSave = (id: any, text: any) => {
     if (text.length === 0) {
       this.props.deleteTodo(id)
     } else {
@@ -28,6 +35,7 @@ export default class TodoItem extends Component {
     this.setState({ editing: false })
   }
 
+  // @ts-expect-error TS(4114) FIXME: This member must have an 'override' modifier becau... Remove this comment to see the full error message
   render () {
     const { todo, completeTodo, deleteTodo } = this.props
 
@@ -37,7 +45,7 @@ export default class TodoItem extends Component {
         <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
-          onSave={text => this.handleSave(todo.id, text)}
+          onSave={(text: any) => this.handleSave(todo.id, text)}
         />
       )
     } else {
