@@ -2,7 +2,6 @@
 // compare to App.spec.js
 import React from 'react'
 import App from './App'
-// @ts-expect-error TS(6059) FIXME: File '/Users/kwameamosah/projects/ts-migrate-examp... Remove this comment to see the full error message
 import {mount} from 'cypress-react-unit-test'
 // we are making mini application - thus we need a store!
 import { Provider } from 'react-redux'
