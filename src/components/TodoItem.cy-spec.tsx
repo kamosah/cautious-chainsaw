@@ -1,9 +1,8 @@
 /// <reference types="cypress" />
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import React from 'react'
-// @ts-expect-error TS(6142): Module './TodoItem' was resolved to '/Users/kwamea... Remove this comment to see the full error message
+// @ts-expect-error TS(6142) FIXME: Module './TodoItem' was resolved to '/Users/kwamea... Remove this comment to see the full error message
 import TodoItem from './TodoItem'
-// @ts-expect-error TS(6142): Module '../store' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
+// @ts-expect-error TS(6142) FIXME: Module '../store' was resolved to '/Users/kwameamo... Remove this comment to see the full error message
 import { StoreProvider } from '../store'
 import {mount} from 'cypress-react-unit-test'
 
@@ -23,13 +22,12 @@ const setup = ( editing = false ) => {
   // each todo item is inside ".todo-list" element
   // simple: place TodoItem in a <ul class="todo-list>
   mount(
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+    // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <StoreProvider>
-      {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
+      {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
       <ul className="todo-list">
-        {/* @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
+        {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
         <TodoItem {...props} />
-      {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
       </ul>
     </StoreProvider>,
     { cssFile: 'node_modules/todomvc-app-css/index.css' }

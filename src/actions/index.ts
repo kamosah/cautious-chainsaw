@@ -8,7 +8,7 @@ export const deleteTodo = (id: any) => ({
   type: types.DELETE_TODO,
   id
 })
-// @ts-expect-error TS(7006): Parameter 'id' implicitly has an 'any' type.
+// @ts-expect-error TS(7006) FIXME: Parameter 'id' implicitly has an 'any' type.
 export const editTodo = (id, text) => ({
   type: types.EDIT_TODO,
   id,

@@ -1,8 +1,8 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
+// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as TodoActions from '../actions'
-// @ts-expect-error TS(6142): Module '../components/TodoList' was resolved to '/... Remove this comment to see the full error message
+// @ts-expect-error TS(6142) FIXME: Module '../components/TodoList' was resolved to '/... Remove this comment to see the full error message
 import TodoList from '../components/TodoList'
 import { getVisibleTodos } from '../selectors'
 

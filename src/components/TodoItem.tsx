@@ -1,8 +1,7 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import React, { Component } from 'react'
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'clas... Remove this comment to see the full error message
+// @ts-expect-error TS(2307) FIXME: Cannot find module 'classnames' or its correspondi... Remove this comment to see the full error message
 import classnames from 'classnames'
-// @ts-expect-error TS(6142): Module './TodoTextInput' was resolved to '/Users/k... Remove this comment to see the full error message
+// @ts-expect-error TS(6142) FIXME: Module './TodoTextInput' was resolved to '/Users/k... Remove this comment to see the full error message
 import TodoTextInput from './TodoTextInput'
 
 type Props = {
@@ -41,7 +40,7 @@ export default class TodoItem extends Component<Props, State> {
     let element
     if (this.state.editing) {
       element = (
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+        // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
@@ -50,26 +49,25 @@ export default class TodoItem extends Component<Props, State> {
       )
     } else {
       element = (
-        // @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
+        // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <div className='view'>
-          {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
+          {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <input
             className='toggle'
             type='checkbox'
             checked={todo.completed}
             onChange={() => completeTodo(todo.id)}
           />
-          {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
+          {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
-          {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
+          {/* @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message */}
           <button className='destroy' onClick={() => deleteTodo(todo.id)} />
-        {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
         </div>
       )
     }
 
     return (
-      // @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
+      // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <li
         className={classnames({
           todo: true,
@@ -78,7 +76,6 @@ export default class TodoItem extends Component<Props, State> {
         })}
       >
         {element}
-      {/* @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message */}
       </li>
     )
   }

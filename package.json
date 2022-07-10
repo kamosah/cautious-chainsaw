@@ -41,6 +41,7 @@
     "@babel/core": "7.13.14",
     "@babel/preset-react": "7.13.13",
     "@cypress/code-coverage": "3.9.4",
+    "@types/react": "^18.0.15",
     "babel-plugin-istanbul": "6.0.0",
     "babel-plugin-transform-class-properties": "6.24.1",
     "coveralls": "3.1.0",

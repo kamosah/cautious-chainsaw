@@ -1,6 +1,5 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import React, { Component } from 'react'
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'clas... Remove this comment to see the full error message
+// @ts-expect-error TS(2307) FIXME: Cannot find module 'classnames' or its correspondi... Remove this comment to see the full error message
 import classnames from 'classnames'
 
 type Props = {
@@ -18,7 +17,6 @@ export default class TodoTextInput extends Component<Props, State> {
   setState: any;
 
   state = {
-    // @ts-expect-error TS(2729): Property 'props' is used before its initialization... Remove this comment to see the full error message
     text: this.props.text || ''
   }
 
@@ -44,7 +42,7 @@ export default class TodoTextInput extends Component<Props, State> {
 
   render() {
     return (
-      // @ts-expect-error TS(7026): JSX element implicitly has type 'any' because no i... Remove this comment to see the full error message
+      // @ts-expect-error TS(17004) FIXME: Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <input className={
         classnames({
           edit: this.props.editing,
