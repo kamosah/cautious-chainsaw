@@ -1,6 +1,5 @@
 import React from 'react'
 import { createStore } from 'redux'
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 

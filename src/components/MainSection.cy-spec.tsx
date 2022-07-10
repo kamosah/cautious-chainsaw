@@ -5,7 +5,6 @@ import MainSection from './MainSection'
 import { mount } from 'cypress-react-unit-test'
 
 // we are making mini application - thus we need a store!
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducer from '../reducers'

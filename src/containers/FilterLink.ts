@@ -1,4 +1,3 @@
-// @ts-expect-error TS(7016) FIXME: Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { connect } from 'react-redux'
 import { setVisibilityFilter } from '../actions'
 // @ts-expect-error TS(6142) FIXME: Module '../components/Link' was resolved to '/User... Remove this comment to see the full error message
