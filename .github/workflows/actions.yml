@@ -11,7 +11,7 @@ jobs:
       - run: yarn
       - id: coverage_upload
         shell: bash
-        run: npm run ts-coverage > tsCoverage.txt
+        run: yarn ts-coverage > tsCoverage.txt
       - name: Upload TS Coverage
         uses: actions/upload-artifact@v3
         with:
