@@ -32,7 +32,7 @@ jobs:
       #     coverage=`cat tsCoverage.txt`
       - name: Get Directory Structure
       - shell: bash
-        run: ls
+        run: pwd
       - name: Comment TS Coverage
         uses: actions/github-script@v6
         with:
