@@ -1,6 +1,6 @@
-import glob from "glob";
+const glob = require("glob");
 
-const getCoverage = async () => {
+const getTSCoverage = async () => {
   const allJSTSFiles = glob.sync("/**/*.[j|t]s?(x)", {
     root: "src",
   });
@@ -10,4 +10,4 @@ const getCoverage = async () => {
   return +(tsFiles.length / allJSTSFiles.length).toFixed(2);
 };
 
-export default getCoverage;
+module.exports = getTSCoverage;
