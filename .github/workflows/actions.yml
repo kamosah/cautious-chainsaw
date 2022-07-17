@@ -7,8 +7,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Install Dependencies
-        uses: actions/setup-node@v3
-      - run: npm install
+        uses: DerYeger/yarn-setup-action@master
+      - run: yarn
       - id: coverage_upload
         shell: bash
         run: npm run ts-coverage > tsCoverage.txt
