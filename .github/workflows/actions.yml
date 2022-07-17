@@ -20,6 +20,7 @@ jobs:
 # -------------------------------------  
   download_artifacts:
     runs-on: ubuntu-latest
+    needs: upload_ts_coverage
     steps:
       - name: Generate TS Coverage Comment
         id: coverage_comment
