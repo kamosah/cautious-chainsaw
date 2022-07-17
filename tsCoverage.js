@@ -18,5 +18,5 @@ getCoverage().then((coverage) => {
   return coverage;
 });
 
-export default getCoverage;
+module.exports = getCoverage;
 
