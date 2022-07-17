@@ -9,9 +9,6 @@ jobs:
       - name: Install Dependencies
         uses: DerYeger/yarn-setup-action@master
       - run: yarn
-      - name: Get directory info
-      - shell: bash
-        run: ls
       # - id: coverage_upload
   #       shell: bash
   #       run: yarn ts-coverage > tsCoverage.txt
