@@ -1,4 +1,4 @@
-import glob from "glob";
+const glob = require("glob");
 
 let tsCoverage = 0;
 
@@ -19,4 +19,3 @@ getCoverage().then((coverage) => {
 });
 
 module.exports = getCoverage;
-
