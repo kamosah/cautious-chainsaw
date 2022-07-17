@@ -33,11 +33,12 @@ jobs:
       - name: Comment TS Coverage
         uses: actions/github-script@v6
         with:
-          scripts: |
+          script: |
+            var msg = "TypeScript Coverage is at $coverage %"
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: "TypeScript Coverage is at $coverage %"
+              body: msg
             })
 # -------------------------------------  
