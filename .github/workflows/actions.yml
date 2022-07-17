@@ -4,7 +4,11 @@ jobs:
   upload_ts_coverage:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        uses: actions/setup-node@v3
+      - run: npm install
       - id: coverage_upload
         shell: bash
         run: npm run ts-coverage > tsCoverage.txt
