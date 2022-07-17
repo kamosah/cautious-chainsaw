@@ -1,0 +1,37 @@
+name: GitHub Actions Test
+on: [push]
+jobs:
+  upload_ts_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - id: coverage_upload
+        shell: bash
+        run: npm run ts-coverage > tsCoverage.txt
+      - name: Upload TS Coverage
+        uses: actions/upload-artifact@v3
+        with:
+          name: tsCoverage
+          path: tsCoverage.txt
+# -------------------------------------  
+  download_artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate TS Coverage Comment
+        id: coverage_comment
+        uses: actions/download-artifact@v3
+        with:
+          name: tsCoverage
+      - shell: bash
+        run: |
+          coverage=`cat tsCoverage.txt`
+      - name: Comment TS Coverage
+        uses: actions/github-script@v6
+        with:
+          scripts: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "TypeScript Coverage is at $coverage %"
+            })
+# -------------------------------------  
