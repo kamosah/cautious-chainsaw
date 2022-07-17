@@ -9,6 +9,8 @@ jobs:
       - name: Install Dependencies
         uses: DerYeger/yarn-setup-action@master
       - run: yarn
+      - name: Get directory info
+        run: ls
       # - id: coverage_upload
   #       shell: bash
   #       run: yarn ts-coverage > tsCoverage.txt
@@ -32,8 +34,7 @@ jobs:
       #     coverage=`cat tsCoverage.txt`
       - name: Comment TS Coverage
         uses: actions/github-script@v6
-      - shell: bash
-        run: pwd
+     
         with:
           script: |
             let totalCoverage = 100;
