@@ -10,13 +10,13 @@ jobs:
         uses: DerYeger/yarn-setup-action@master
       - run: yarn
       - id: coverage_upload
-        shell: bash
-        run: yarn ts-coverage > tsCoverage.txt
-      - name: Upload TS Coverage
-        uses: actions/upload-artifact@v3
-        with:
-          name: tsCoverage
-          path: tsCoverage.txt
+  #       shell: bash
+  #       run: yarn ts-coverage > tsCoverage.txt
+  #     - name: Upload TS Coverage
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: tsCoverage
+  #         path: tsCoverage.txt
 # -------------------------------------  
   download_artifacts:
     runs-on: ubuntu-latest
@@ -24,12 +24,12 @@ jobs:
     steps:
       - name: Generate TS Coverage Comment
         id: coverage_comment
-        uses: actions/download-artifact@v3
-        with:
-          name: tsCoverage
-      - shell: bash
-        run: |
-          coverage=`cat tsCoverage.txt`
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: tsCoverage
+      # - shell: bash
+      #   run: |
+      #     coverage=`cat tsCoverage.txt`
       - name: Comment TS Coverage
         uses: actions/github-script@v6
         with:
