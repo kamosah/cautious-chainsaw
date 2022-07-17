@@ -32,6 +32,7 @@ jobs:
       #     coverage=`cat tsCoverage.txt`
       - name: Comment TS Coverage
         uses: actions/github-script@v6
+        run: pwd && ls
         with:
           script: |
             let totalCoverage = 100;
