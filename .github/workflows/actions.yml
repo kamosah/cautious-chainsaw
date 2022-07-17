@@ -1,0 +1,25 @@
+name: GitHub Actions Test
+on: [pull_request]
+jobs:
+  upload_ts_coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Install Dependencies
+        uses: DerYeger/yarn-setup-action@master
+      - run: yarn
+      - name: Comment TS Coverage
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const getCoverage = require('./getTSCoverage.js')
+            getCoverage().then((coverage) => {
+              const msg = `TypeScript Coverage is at ${coverage}%`
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: msg
+              })
+            })
