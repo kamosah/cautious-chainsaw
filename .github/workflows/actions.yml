@@ -30,9 +30,10 @@ jobs:
       # - shell: bash
       #   run: |
       #     coverage=`cat tsCoverage.txt`
+      - name: Get Directory Structure
+        run: pwd && ls
       - name: Comment TS Coverage
         uses: actions/github-script@v6
-        run: pwd && ls
         with:
           script: |
             let totalCoverage = 100;
