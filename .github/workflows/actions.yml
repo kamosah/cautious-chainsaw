@@ -9,7 +9,7 @@ jobs:
       - name: Install Dependencies
         uses: DerYeger/yarn-setup-action@master
       - run: yarn
-      - id: coverage_upload
+      # - id: coverage_upload
   #       shell: bash
   #       run: yarn ts-coverage > tsCoverage.txt
   #     - name: Upload TS Coverage
