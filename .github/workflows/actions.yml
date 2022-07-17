@@ -32,12 +32,11 @@ jobs:
       #     coverage=`cat tsCoverage.txt`
       - name: Comment TS Coverage
         uses: actions/github-script@v6
-     
         with:
           script: |
             let totalCoverage = 100;
             let msg = 'message before getting coverage'
-            const getCoverage = require('./tsCoverage.js')
+            const getCoverage = require('../../tsCoverage.js')
             const coverage = getCoverage().then(() => {
               totalCoverage = 20;
               msg = `TypeScript Coverage is at ${totalCoverage}%`
