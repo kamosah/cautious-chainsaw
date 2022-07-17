@@ -17,3 +17,6 @@ getCoverage().then((coverage) => {
   console.log("10");
   return coverage;
 });
+
+export default getCoverage;
+
