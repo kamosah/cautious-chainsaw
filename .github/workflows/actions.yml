@@ -1,5 +1,5 @@
 name: GitHub Actions Test
-on: [push, pull_request]
+on: [pull_request]
 jobs:
   upload_ts_coverage:
     runs-on: ubuntu-latest
@@ -36,7 +36,7 @@ jobs:
           script: |
             let totalCoverage = 100;
             let msg = 'message before getting coverage'
-            const getCoverage = require('./tsCoverage.ts')
+            const getCoverage = require('./tsCoverage.js')
             const coverage = getCoverage().then(() => {
               totalCoverage = 20;
               msg = `TypeScript Coverage is at ${totalCoverage}%`
