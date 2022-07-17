@@ -13,13 +13,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            let totalCoverage = 100;
-            let msg = 'message before getting coverage'
-            const getCoverage = require('./tsCoverage.js')
-            const coverage = getCoverage().then(() => {
-              totalCoverage = 20;
-              console.log({ totalCoverage });
-              msg = `TypeScript Coverage is at ${totalCoverage}%`
+            const getCoverage = require('./tsCoverage.ts')
+            getCoverage().then((coverage) => {
+              const msg = `TypeScript Coverage is at ${coverage}%`
               github.rest.issues.createComment({
                 issue_number: context.issue.number,
                 owner: context.repo.owner,
