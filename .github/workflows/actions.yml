@@ -34,12 +34,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            let coverage = 100;
+            let totalCoverage = 100;
             let msg = 'message before getting coverage'
             const getCoverage = require('./tsCoverage.ts')
             const coverage = getCoverage().then(() => {
-              coverage = 20;
-              msg = `TypeScript Coverage is at ${coverage}%`
+              totalCoverage = 20;
+              msg = `TypeScript Coverage is at ${totalCoverage}%`
             })
             
             github.rest.issues.createComment({
